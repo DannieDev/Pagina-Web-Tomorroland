@@ -1,0 +1,87 @@
+/* 📌 Ajustar tamaño del buscador */
+.search-container {
+    position: relative;
+    width: auto;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🔍 Ícono de búsqueda */
+.search-icon {
+    position: absolute;
+    right: 12px;
+    font-size: 16px;
+    color: white;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+/* 📌 Tamaño del input cuando está colapsado */
+.search-input {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #3a98ff;
+    background: transparent;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    outline: none;
+    box-shadow: 0 0 10px rgba(58, 152, 255, 0.6);
+    padding-right: 30px; /* Espaciado para el icono */
+}
+
+/* 🔍 Ocultar placeholder hasta que se expanda */
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0);
+    transition: color 0.3s ease-in-out;
+}
+
+/* 📌 Expansión del input */
+.search-container:hover .search-input,
+.search-input:focus {
+    width: 160px; /* Antes era 200px, lo reducimos para evitar que cubra el botón */
+    height: 35px;
+    border-radius: 20px;
+    padding-left: 12px;
+    text-align: left;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Asegurar espacio entre el buscador y el botón de login */
+}
+
+/* 📌 Hacer que el placeholder sea visible cuando el input se expanda */
+.search-container:hover .search-input::placeholder,
+.search-input:focus::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* 📌 Mantener el ícono visible cuando el input tiene foco */
+.search-container .search-icon {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* 📌 Ocultar el ícono solo cuando el usuario escribe algo */
+.search-input:not(:placeholder-shown) ~ .search-icon {
+    opacity: 0.5; /* En lugar de desaparecer, solo se vuelve más tenue */
+}
+
+/* 📌 Asegurar que el icono reaparezca solo cuando el input esté vacío y pierda el foco */
+.search-container:not(:focus-within) .search-input:placeholder-shown ~ .search-icon {
+    display: block;
+}
+
+/* 📌 Evitar que el buscador cubra el botón en pantallas pequeñas */
+@media (max-width: 1024px) {
+    .search-container:hover .search-input,
+    .search-input:focus {
+        width: 140px; /* Reducimos más en pantallas medianas */
+    }
+}

@@ -1,0 +1,41 @@
+ </nav>
+  <footer class="container-fluid p-0">
+    <div class="row footer-content">
+      <div class="col-md-6 map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13035.46901327725!2d-80.85396551628644!3d35.234674411422155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8856a03af474f38f%3A0xf8301daadf5f7670!2sFourth+Ward%2C+Charlotte%2C+NC%2C+USA!5e0!3m2!1sen!2sin!4v1551001218548"
+          style="border:0" allowfullscreen></iframe>
+      </div>
+      <div class="col-md-6 content-us">
+        <div class="login-box">
+          <form>
+            <h2>Contactanos</h2>
+            <div class="user-box">
+              <input type="text" name="" required="">
+              <label>Nombre</label>
+            </div>
+            <div class="user-box">
+              <input type="email" name="" required="">
+              <label>Correo</label>
+            </div>
+            <div class="user-box">
+              <textarea name="message" required placeholder=""></textarea>
+              <label>Mensaje</label>
+            </div>
+
+            <a href="#">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Enviar
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="copy pt-4 pb-4">
+      <p><a href="" target="_blank"> &copy; 2025 Tomorrowland</a> &nbsp; | &nbsp; Design by <a href=""
+          target="_blank">Dannie_Dev</a> &nbsp; | &nbsp; All rights reserved</p>
+    </div>
+  </footer>

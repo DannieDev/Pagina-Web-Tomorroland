@@ -1,0 +1,265 @@
+/* Reset básico */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Oswald-Bold";
+    src: url(../fonts/Oswald-Bold.ttf);
+}
+
+@font-face {
+    font-family: "PT-Sans-Bold";
+    src: url(../fonts/PT_Sans-Web-Bold.ttf);
+}
+
+@font-face {
+    font-family: "PT-Sans-Regular";
+    src: url(../fonts/PT_Sans-Web-Regular.ttf);
+}
+
+@font-face {
+    font-family: "PT-Sans-Italic";
+    src: url(../fonts/PT_Sans-Web-Italic.ttf);
+}
+
+body {
+    font-family: "PT-Sans-Regular", Arial, sans-serif;
+    background: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "PT-Sans-Bold";
+}
+
+h2 {
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+    h2 {
+        font-size: 18px;
+    }
+}
+
+/* 📌 HEADER */
+.header {
+    background: rgba(200, 200, 200, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 📌 MENÚ DE NAVEGACIÓN */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    padding: 0 15px;
+}
+
+/* 📌 Distribución correcta de los elementos */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+    gap: 25px;
+    list-style: none;
+}
+
+/* 📌 ESTILO DE LOS ENLACES */
+.navbar-nav .nav-item a {
+    color: white;
+    font-size: 16px;
+    font-family: "PT-Sans-Bold";
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    padding: 10px 15px;
+}
+
+/* 📌 Efecto de fondo transparente al pasar el mouse en el menú principal */
+.navbar-nav .nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* 📌 CONTENEDOR DEL BOTÓN "INICIAR SESIÓN" Y BÚSQUEDA */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 📌 BOTÓN DE INICIO DE SESIÓN */
+.account-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaciado entre el icono y el texto */
+    padding: 10px 18px; /* Ajusta el padding para que se vea proporcionado */
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #1E6FD9; /* Azul más oscuro */
+    color: white;
+    border: 2px solid #3A98FF;
+    border-radius: 30px; /* Bordes redondeados */
+    text-decoration: none; /* Quitar subrayado */
+    transition: background 0.3s ease-in-out;
+}
+
+.account-btn i {
+    font-size: 16px; /* Tamaño del icono */
+}
+
+/* 📌 Efecto hover para que cambie de color al pasar el mouse */
+.account-btn:hover {
+    background-color: #3A98FF; /* Azul más suave */
+    color: white;
+    text-decoration: none;
+}
+
+
+/* 📌 AJUSTE DEL MENÚ DESPLEGABLE */
+.maine-menu .navbar-nav li {
+    position: relative;
+}
+
+/* 🔽 Estilos para el menú desplegable */
+.maine-menu .navbar-nav li .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Fondo negro transparente */
+    backdrop-filter: blur(8px); /* Efecto difuminado */
+    width: 220px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+/* ✔️ Mantener la estructura de los elementos */
+.maine-menu .navbar-nav li .dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 📌 Restaurar la línea blanca al seleccionar un subtema */
+.maine-menu .navbar-nav li .dropdown ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: block;
+    padding: 12px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+/* 🔵 Línea blanca al seleccionar */
+.maine-menu .navbar-nav li .dropdown ul li a:hover {
+    background: none;
+    border-bottom: 2px solid #3A98FF;
+    padding-bottom: 3px;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* 📌 Asegurar que el buscador no sea afectado por reglas globales */
+.navbar-right .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 991px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .search-container {
+        margin-top: 10px;
+    }
+}
+
+/* 📌 Contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+/* 📌 Tamaño y estilo del logo */
+.logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #3a98ff;
+    color: white;
+    box-shadow: 0 0 10px rgba(58, 152, 255, 0.6);
+}
+
+/* 📌 Cuando el usuario pasa el mouse sobre el título del menú */
+.maine-menu .navbar-nav li:hover > a {
+    color: #3A98FF; /* Azul brillante */
+}
+
+/* 📌 Mantener el color azul en la página actual */
+.maine-menu .navbar-nav li.active > a {
+    color: #3A98FF !important; /* Asegurar que permanezca azul */
+    font-weight: bold; /* Opcional: Hacerlo más llamativo */
+}
+
+
+/* 📌 Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .logo {
+        height: 40px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .account-btn {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+    .account-btn i {
+        font-size: 14px;
+    }
+}
+.maine-menu .navbar-nav li:hover > .dropdown {
+    display: block;
+}
